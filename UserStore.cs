@@ -49,7 +49,7 @@ namespace estiaAuth
 
         public async Task<User> FindByUsername(string username, CancellationToken cancellationToken = default)
         {
-            return await _users.Find(new BsonDocument("username", "/^" + username + "$/i"))
+            return await _users.Find(t => t.Username == username)
                 .FirstOrDefaultAsync(cancellationToken);
         }
 

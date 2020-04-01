@@ -1,4 +1,5 @@
 ﻿
+using IdentityServer4.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -29,12 +30,15 @@ namespace estiaAuth
 
             services.AddSingleton<UserStore>();
 
+            // services.AddSingleton<IProfileService, CustomProfileService>();
+
             services.AddControllersWithViews();
 
             var builder = services.AddIdentityServer()
                 .AddInMemoryIdentityResources(Config.Ids)
                 .AddInMemoryApiResources(Config.Apis)
                 .AddInMemoryClients(Config.Clients);
+            // .AddProfileService<CustomProfileService>();
 
             // not recommended for production - you need to store your key material somewhere secure
             builder.AddDeveloperSigningCredential();

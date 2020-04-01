@@ -1,4 +1,5 @@
 ﻿
+using IdentityModel;
 using IdentityServer4;
 using IdentityServer4.Models;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace estiaAuth
         public static IEnumerable<ApiResource> Apis =>
             new ApiResource[]
             {
-                new ApiResource("estiaApi", "Estia API")
+                new ApiResource("estiaApi", "Estia API") { UserClaims = { JwtClaimTypes.Name }}
             };
 
         public static IEnumerable<Client> Clients =>
