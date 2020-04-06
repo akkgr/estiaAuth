@@ -38,7 +38,8 @@ namespace estiaAuth
                     },
 
                     // scopes that client has access to
-                    AllowedScopes = { "estiaApi" }
+                    AllowedScopes = { "estiaApi" },
+                    RequireConsent = false
                 },
                 new Client
                 {
@@ -57,7 +58,9 @@ namespace estiaAuth
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
                         "estiaApi"
-                    }
+                    },
+
+                    RequireConsent = false
                 }
             };
 
