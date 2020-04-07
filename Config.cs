@@ -48,6 +48,7 @@ namespace estiaAuth
                     AllowedGrantTypes = GrantTypes.Code,
                     RequirePkce = true,
                     RequireClientSecret = false,
+                    AllowOfflineAccess = true,
 
                     RedirectUris =           { "http://localhost:3000/callback" },
                     PostLogoutRedirectUris = { "http://localhost:3000/" },
