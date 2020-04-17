@@ -61,7 +61,8 @@ namespace estiaAuth
                         "estiaApi"
                     },
 
-                    RequireConsent = false
+                    RequireConsent = false,
+                    AccessTokenLifetime = 28800
                 }
             };
 
